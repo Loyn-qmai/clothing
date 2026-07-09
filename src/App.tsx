@@ -341,7 +341,7 @@ export default function App() {
       </header>
 
       {/* Main body area */}
-      <main className="flex-1 max-w-7xl w-full mx-auto p-4 md:p-6 lg:p-8">
+      <main className="flex-1 max-w-7xl w-full mx-auto p-4 md:p-6 lg:p-8 pb-24 lg:pb-8">
         <AnimatePresence mode="wait">
           
           {/* TAB 1: AI EXPERT CHATBOT */}
@@ -351,7 +351,7 @@ export default function App() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
-              className="grid grid-cols-1 lg:grid-cols-4 gap-4 h-[calc(100vh-12rem)] min-h-[500px]"
+              className="grid grid-cols-1 lg:grid-cols-4 gap-4 h-auto lg:h-[calc(100vh-14rem)] lg:min-h-[600px]"
             >
               {/* Sidebar Q&A Prompts as a Bento Card */}
               <div className={`lg:col-span-1 ${cardBg} p-6 rounded-3xl border-2 shadow-sm flex flex-col justify-between transition-all duration-300`}>
@@ -395,7 +395,7 @@ export default function App() {
               </div>
 
               {/* Chat Interface as a Big Bento Card */}
-              <div className={`lg:col-span-3 flex flex-col ${cardBg} rounded-3xl border-2 shadow-sm overflow-hidden h-full transition-all duration-300`}>
+              <div className={`lg:col-span-3 flex flex-col ${cardBg} rounded-3xl border-2 shadow-sm overflow-hidden h-[550px] sm:h-[650px] lg:h-full transition-all duration-300`}>
                 {/* Chat Header */}
                 <div className="bg-slate-900 text-white px-6 py-4 flex items-center justify-between border-b-2 border-slate-800">
                   <div className="flex items-center gap-3">
@@ -1329,23 +1329,48 @@ export default function App() {
               </div>
             </div>
             <p>© 2026 Thế Giới May Mặc &amp; In Ấn.</p>
-            <p className="text-[10px] text-slate-600 uppercase tracking-wide">Phục vụ cộng đồng Designer, local brand &amp; các xưởng may Việt Nam.</p>
-          </div>
-
-          {/* Disclaimer / Warning Info */}
-          <div className="col-span-1 md:col-span-3 mt-6 pt-6 border-t border-slate-800 text-slate-400 leading-relaxed font-semibold text-[11px] space-y-2">
-            <div className="flex items-start gap-3 bg-slate-950/50 p-4 rounded-xl border border-slate-800/80">
-              <AlertTriangle className="h-5 w-5 text-amber-500 shrink-0 mt-0.5" />
-              <div className="space-y-1">
-                <p className="text-slate-300 font-black uppercase tracking-wider text-[10px]">Tuyên bố miễn trừ trách nhiệm quan trọng</p>
-                <p className="text-slate-500 text-xs leading-relaxed font-medium">
-                  Mọi thông tin dệt may, thông số kỹ thuật, bảng size, dự kiến giá in ấn hiển thị trên ứng dụng này (bao gồm cả các phản hồi từ Trợ lý AI) đều được tổng hợp tự động dựa trên công nghệ tìm kiếm thông minh từ dữ liệu dệt may công cộng trên mạng Internet toàn cầu. Hệ thống không khẳng định, không cam đoan hay bảo đảm bất kỳ kiến thức hay câu trả lời nào là chính xác tuyệt đối. Quý khách hàng vui lòng đối chiếu trực tiếp với các chuyên gia kỹ thuật và đại diện xưởng may trước khi tiến hành đặt hàng hoặc sản xuất loạt lớn để hạn chế tối đa rủi ro.
-                </p>
-              </div>
-            </div>
+            <p className="text-[10px] text-slate-600 uppercase tracking-wide">Phục vụ cộng đồng Designer, local brand &amp; các xưởng may.</p>
           </div>
         </div>
       </footer>
+
+      {/* Mobile Fixed Bottom Navigation Bar */}
+      <div className={`lg:hidden fixed bottom-4 left-4 right-4 z-50 ${cardBg} border-2 rounded-2xl shadow-xl px-2 py-2.5 flex items-center justify-around transition-all duration-300 backdrop-blur-md bg-opacity-95`}>
+        {[
+          { id: 'chat', label: 'Trợ Lý AI', icon: Sparkles },
+          { id: 'library', label: 'Kiến Thức', icon: Layers },
+          { id: 'estimator', label: 'Tính Giá', icon: Calculator },
+          { id: 'sizeGuide', label: 'Vải & Size', icon: Ruler }
+        ].map(tab => {
+          const Icon = tab.icon;
+          const isActive = activeTab === tab.id;
+          return (
+            <button
+              key={tab.id}
+              onClick={() => {
+                setActiveTab(tab.id as any);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="flex flex-col items-center gap-1 flex-1 relative py-1 cursor-pointer"
+            >
+              <div className={`p-2 rounded-xl transition-all duration-300 ${
+                isActive 
+                  ? 'bg-indigo-600 text-white shadow-md scale-110' 
+                  : isDark ? 'text-slate-400 hover:text-slate-100' : 'text-slate-500 hover:text-indigo-600'
+              }`}>
+                <Icon className="h-4.5 w-4.5" />
+              </div>
+              <span className={`text-[8px] font-black uppercase tracking-widest ${
+                isActive 
+                  ? 'text-indigo-600 dark:text-indigo-400' 
+                  : isDark ? 'text-slate-500' : 'text-slate-400'
+              }`}>
+                {tab.label}
+              </span>
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 }

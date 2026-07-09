@@ -1,0 +1,6 @@
+{
+  "name": "Thế Giới May Mặc & In Ấn",
+  "description": "Trợ lý AI và công cụ tra cứu, tính toán thông tin về chất liệu vải, quy trình may mặc và kỹ thuật in ấn áo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -250,11 +250,11 @@ export default function App() {
         <div className={`${cardBg} border-2 rounded-2xl shadow-sm px-6 py-4 flex flex-col lg:flex-row items-center justify-between gap-4 transition-colors duration-300`}>
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-extrabold text-xl shadow-sm">
-              M
+              P
             </div>
             <div>
               <h1 className={`text-xl font-extrabold tracking-tight uppercase ${textTitle}`}>
-                May Mặc <span className="text-indigo-600 font-black">AI Expert</span>
+                PHI SƠN <span className="text-indigo-600 font-black">AI Expert</span>
               </h1>
               <p className={`text-[10px] ${textMuted} font-bold uppercase tracking-widest`}>
                 Cẩm Nang Số &amp; Hệ Thống Quy Chuẩn May Mặc
@@ -519,7 +519,7 @@ export default function App() {
                 {[
                   { id: 'fabrics', label: 'Bách Khoa Sợi Vải', icon: Shirt },
                   { id: 'printing', label: 'Mục Lục In Ấn', icon: Printer },
-                  { id: 'steps', label: 'Hành Trình May Mặc', icon: Scissors }
+                  { id: 'steps', label: 'Quy Trình Sản Xuất', icon: Scissors }
                 ].map(subTab => {
                   const Icon = subTab.icon;
                   const isSubActive = libSubTab === subTab.id;
@@ -1292,10 +1292,10 @@ export default function App() {
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-white font-extrabold uppercase tracking-wider text-sm">
               <HeartHandshake className="h-5 w-5 text-indigo-400" />
-              <span>Thế Giới May Mặc &amp; In Ấn Việt Nam</span>
+              <span>CÔNG TY DỆT MAY PHI SƠN</span>
             </div>
             <p className="text-slate-500 leading-relaxed font-semibold">
-              Cẩm nang dệt may thông minh hỗ trợ bởi công nghệ Gemini AI và thuật toán may đo tự động.
+              Cẩm nang ngành dệt may thông minh hỗ trợ bởi công nghệ Gemini AI.
             </p>
           </div>
 
@@ -1328,7 +1328,7 @@ export default function App() {
                 <p className="text-slate-500 font-bold">Gemini 3.5 Flash</p>
               </div>
             </div>
-            <p>© 2026 Thế Giới May Mặc &amp; In Ấn.</p>
+            <p>© 2026 Phoiaophison</p>
             <p className="text-[10px] text-slate-600 uppercase tracking-wide">Phục vụ cộng đồng Designer, local brand &amp; các xưởng may.</p>
           </div>
         </div>

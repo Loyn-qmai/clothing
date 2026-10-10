@@ -254,10 +254,10 @@ export default function App() {
             </div>
             <div>
               <h1 className={`text-xl font-extrabold tracking-tight uppercase ${textTitle}`}>
-                PHI SƠN <span className="text-indigo-600 font-black">AI Expert</span>
+                LO <span className="text-indigo-600 font-black">AI Expert</span>
               </h1>
               <p className={`text-[10px] ${textMuted} font-bold uppercase tracking-widest`}>
-                Cẩm Nang Số &amp; Hệ Thống Quy Chuẩn May Mặc
+                Cẩm Nang Số &amp; Hệ Thống Hỗ Trợ May Mặc
               </p>
             </div>
           </div>
@@ -1292,10 +1292,10 @@ export default function App() {
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-white font-extrabold uppercase tracking-wider text-sm">
               <HeartHandshake className="h-5 w-5 text-indigo-400" />
-              <span>CÔNG TY DỆT MAY PHI SƠN</span>
+              <span>LO STUDIO</span>
             </div>
             <p className="text-slate-500 leading-relaxed font-semibold">
-              Cẩm nang ngành dệt may thông minh hỗ trợ bởi công nghệ Gemini AI.
+              Cẩm nang ngành dệt may thông minh hỗ trợ bởi công nghệ AI.
             </p>
           </div>
 
@@ -1328,7 +1328,7 @@ export default function App() {
                 <p className="text-slate-500 font-bold">Gemini 3.5 Flash</p>
               </div>
             </div>
-            <p>© 2026 Phoiaophison</p>
+            <p>© 2026 Lostudio</p>
             <p className="text-[10px] text-slate-600 uppercase tracking-wide">Phục vụ cộng đồng Designer, local brand &amp; các xưởng may.</p>
           </div>
         </div>
